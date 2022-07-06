@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registrar Sitio Turístico</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="createMarker()" [formGroup]="orderForm">
+    <ion-item>
+      <ion-input type="number" placeholder="Latitud" [(ngModel)]="data.position.lat" formControlName="first"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="number" placeholder="Longitud" [(ngModel)]="data.position.lng" formControlName="second"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Título" [(ngModel)]="data.title" formControlName="third"></ion-input>
+    </ion-item>
+
+    <ion-button type="submit" expand="block" [disabled]="!orderForm.valid">Crear</ion-button>
+  </form>
+</ion-content>
